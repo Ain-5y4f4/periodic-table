@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>People Periodic Table</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script async defer src="https://accounts.google.com/gsi/client"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+      "@tweenjs/tween.js": "https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23.1.1/dist/tween.esm.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Image A: login screen -->
+  <main id="login">
+    <section class="card">
+      <h1>Welcome Back</h1>
+      <p>Sign in with your Google account to view the data.</p>
+      <button id="google-btn" type="button">
+        <span class="g">
+          <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 7l7.3 5.7c4.3-4 6.7-9.9 6.7-17.2z"/>
+            <path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/>
+            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.3-5.7c-2 1.4-4.7 2.3-8.6 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/>
+          </svg>
+        </span>
+        Sign in with Google
+      </button>
+      <div id="login-error" role="alert" hidden></div>
+    </section>
+  </main>
+
+  <!-- Periodic table app -->
+  <div id="app" hidden>
+    <div id="container"></div>
+    <div id="user"><img id="user-pic" alt=""><span id="user-name"></span><button id="signout" type="button">Sign out</button></div>
+    <nav id="menu">
+      <button data-layout="table">TABLE</button>
+      <button data-layout="sphere">SPHERE</button>
+      <button data-layout="helix">HELIX</button>
+      <button data-layout="grid">GRID</button>
+      <div id="legend">
+        <span><i style="background:#EF3022"></i>&lt; $100K</span>
+        <span><i style="background:#FDCA35"></i>&gt; $100K</span>
+        <span><i style="background:#3A9F48"></i>&gt; $200K</span>
+      </div>
+    </nav>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
